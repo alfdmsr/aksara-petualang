@@ -1,5 +1,3 @@
----
-
 ```markdown
 # 📚 Aksara petualang — Aplikasi Literasi Gamifikasi
 
