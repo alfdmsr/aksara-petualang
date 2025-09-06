@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "food_apple",
+      "type": "food",
+      "name": "Apel",
+      "price": 20,
+      "effects": { "hunger": 25 },
+      "assetUrl": "/assets/foods/apple.svg"
+    },
+    {
+      "id": "food_milk",
+      "type": "food",
+      "name": "Susu",
+      "price": 40,
+      "effects": { "hunger": 40, "energy": 10 },
+      "assetUrl": "/assets/foods/milk.svg"
+    },
+    {
+      "id": "cloth_batik",
+      "type": "clothes",
+      "name": "Batik",
+      "price": 300,
+      "assetUrl": "/assets/clothes/batik.svg"
+    },
+    {
+      "id": "cloth_udeng",
+      "type": "clothes",
+      "name": "Udeng",
+      "assetUrl": "/assets/clothes/udeng.svg"
+    }
+  ],
+  "missions": [
+    {
+      "id": "m_read10min",
+      "title": "Membaca 10 menit",
+      "kind": "read_minutes",
+      "target": 10,
+      "reward": { "coins": 40, "xp": 20 }
+    },
+    {
+      "id": "m_quiz3",
+      "title": "Kuis 3 kali",
+      "kind": "quiz_score",
+      "target": 3,
+      "reward": { "coins": 50, "xp": 30 }
+    }
+  ]
+}
