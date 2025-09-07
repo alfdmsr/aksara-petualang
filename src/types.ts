@@ -9,3 +9,12 @@ export type HeroState = {
   >;
   equipped: { outfitId: string | null };
 };
+
+export type Item = {
+  id: string;
+  type: "food" | "clothes";
+  name: string;
+  price: number;
+  assetUrl: string;
+  effects?: Record<string, number>;
+};

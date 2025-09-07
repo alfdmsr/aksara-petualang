@@ -11,10 +11,14 @@ export async function GET() {
 
   const uid = user.id;
   // default dulu
-  await supabase
+  const { data: w0 } = await supabase
     .from("wallet")
-    .upsert({ user_id: uid, coins: 100 })
-    .eq("user_id", uid);
+    .select("user_id")
+    .eq("user_id", uid)
+    .maybeSingle();
+  if (!w0) {
+    await supabase.from("wallet").insert({ user_id: uid, coins: 100 });
+  }
   const defaultHero = {
     level: 1,
     xp: 0,
@@ -26,10 +30,21 @@ export async function GET() {
     },
     equipped: { outfitId: null },
   };
-  await supabase
+
+  const { data: h0 } = await supabase
     .from("hero_state")
-    .upsert({ user_id: uid, data: defaultHero })
-    .eq("user_id", uid);
+    .select("user_id")
+    .eq("user_id", uid)
+    .maybeSingle();
+  if (!h0) {
+    await supabase
+      .from("hero_state")
+      .insert({ user_id: uid, data: defaultHero });
+  }
+  // await supabase
+  //   .from("hero_state")
+  //   .upsert({ user_id: uid, data: defaultHero })
+  //   .eq("user_id", uid);
 
   const [w, h, inv] = await Promise.all([
     supabase.from("wallet").select("*").eq("user_id", uid).single(),

@@ -20,13 +20,14 @@
       "id": "cloth_batik",
       "type": "clothes",
       "name": "Batik",
-      "price": 300,
+      "price": 50,
       "assetUrl": "/assets/clothes/batik.svg"
     },
     {
       "id": "cloth_udeng",
       "type": "clothes",
       "name": "Udeng",
+      "price": 70,
       "assetUrl": "/assets/clothes/udeng.svg"
     }
   ],
